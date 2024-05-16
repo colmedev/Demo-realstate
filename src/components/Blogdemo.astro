@@ -1,0 +1,53 @@
+---
+import { Image } from 'astro:assets';
+interface Props {
+  title: string;
+  date: string;
+  body: string;
+  image: string;
+}
+
+const { title, image, date, body } = Astro.props
+---
+
+<div class="blog-container">
+  <Image class="image-blog" 
+  src={ image }  
+  alt="announce" 
+  width="300" 
+  height="200"/>
+
+  <div class="content-blog">
+
+    <h2 class="title-blog">{ title }</h2>
+    <span class="underline-title"></span>
+    <p class="date">{date}</p>
+    <p class="body-blog">{ body }</p>
+
+  </div>
+
+</div>
+
+<style is:inline>
+:root {
+  --color-primary: hsl(86deg 100 37);
+}
+
+.blog-container {
+  display: flex;
+}
+
+.image-blog {
+  padding: 1rem;
+}
+
+.underline-title {
+  inline-size: 50%;
+  background-color: var(--color-primary);
+}
+
+.blog-container {
+  inline-size: 100vh
+}
+
+</style>

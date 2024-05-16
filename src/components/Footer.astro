@@ -1,0 +1,26 @@
+---
+import Navbar from "./Navbar.astro"
+---
+
+  <footer class="footer">
+
+    <Navbar>
+      <li class="list"><a href="github.com">Nosotros</a></li>
+      <li class="list"><a href="github.com">Anuncios</a></li>
+      <li class="list"><a href="github.com">Blog</a></li>
+      <li class="list"><a href="github.com">Contacto</a></li>
+    </Navbar>
+
+    <p>Made by Colmedev</p>
+    
+  </footer>
+
+<style is:inline>
+.footer {
+  background-color: var(--bg-color-footer);
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 1rem;
+}
+
+</style>

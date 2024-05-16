@@ -1,6 +1,8 @@
 ---
+//import Navbar from '@components';
+import { Navbar } from '../components';
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -8,44 +10,270 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="description" content="Astro description" />
+
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="icon" type="image/svg+xml" href="" />
+    <title>{title}</title>
+  </head
+  >
+  <body>
+    <header class="header">
+      <div class="header-content">
+        <img src="/img/logo.svg" alt="logo" />
+        <div class="nav">
+          <nav class="nav-bar" data-status="close" aria-hidden="true">
+            <Navbar>
+              <li class="list"><a href="github.com">Nosotros</a></li>
+              <li class="list"><a href="github.com">Anuncios</a></li>
+              <li class="list"><a href="github.com">Blog</a></li>
+              <li class="list"><a href="github.com">Contacto</a></li>
+            </Navbar>
+
+          </nav>
+        </div>
+
+        <div class="burger" data-status="close">
+          <span class="bars bar-top"></span>
+          <span class="bars bar-middle"></span>
+          <span class="bars bar-bottom"></span>
+        </div>
+      </div>
+
+      <p class="paragraph">VENTAS DE CASAS Y DEPARTAMENTOS DE LUJO</p>
+    </header>
+    <slot />
+  </body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+<style is:global lang="scss">
+  @use "sass:map";
+  @use "sass:meta";
+  @use "sass:string";
+
+  $background-color: hsla(0deg 0 100%);
+  $background-color-open: hsla(0deg 0% 0% / 50%);
+
+  html {
+    box-sizing: content-box;
+    font-family: system-ui, sans-serif;
+    background: $background-color;
+    background-size: 224px;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+
+  .header {
+    background: url(../img/header.jpg);
+    background-position: left center;
+    background-size: cover;
+    height: 100svh;
+    min-height: 100svh;
+  }
+
+  @media (width >= 50rem) {
+    .header {
+      background-position: center center;
+      height: 100vh;
+      min-height: 30rem;
+    }
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+  }
+
+  .nav {
+    position: absolute;
+
+    z-index: 1;
+
+    display: flex;
+
+    transform: translateY(-300%);
+
+    opacity: 1;
+
+    transition:
+      transform 300ms ease-in-out,
+      opacity 300ms ease-in-out;
+    inset: 0;
+    inline-size: 100%;
+    block-size: 100svh;
+    padding-block-start: 6.01rem;
+
+    &[data-status="open"] {
+      background-color: var(--color-menu-open);
+      transform: translateY(0);
+      opacity: 100;
+      backdrop-filter: blur(0.1rem);
+    }
+  }
+
+  @media (width >= 50rem) {
+    .nav {
+      position: relative;
+      z-index: 0;
+      block-size: 3rem;
+      transform: translateY(6%);
+      padding-block: 0;
+      justify-content: flex-end;
+    }
+  }
+
+  .burger {
+    inline-size: 3rem;
+    block-size: 2.8125rem;
+    position: relative;
+    top: 0.3rem;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .bars {
+    display: block;
+    position: absolute;
+    inline-size: 100%;
+    block-size: 0.3rem;
+    background: $background-color;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+  }
+
+  .open {
+    transform: translateY(0);
+    opacity: 100;
+    background-color: $background-color-open;
+  }
+
+  .bar-middle {
+    top: 18px;
+  }
+
+  .bar-bottom {
+    top: 36px;
+  }
+
+  .burger[data-status="open"] {
+    .bar-top {
+      top: 18px;
+      -webkit-transform: rotate(135deg);
+      -moz-transform: rotate(135deg);
+      -o-transform: rotate(135deg);
+      transform: rotate(135deg);
+    }
+
+    .bar-middle {
+      opacity: 0;
+      left: -60px;
+    }
+
+    .bar-bottom {
+      top: 18px;
+      -webkit-transform: rotate(-135deg);
+      -moz-transform: rotate(-135deg);
+      -o-transform: rotate(-135deg);
+      transform: rotate(-135deg);
+    }
+  }
+
+  @media (width >= 50rem) {
+    span,
+    .burger {
+      display: none;
+    }
+  }
+
+  .paragraph {
+    position: relative;
+    color: $background-color;
+    top: 32rem;
+    padding-inline-start: 0.5rem;
+    inline-size: fit-content;
+    font-size: 2rem;
+  }
+
+  @media (width >= 50rem) {
+    .paragraph {
+      top: 28rem;
+    }
+  }
+
+  .list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @media(width >= 50rem) {
+    .list {
+      flex-direction: row;
+    }
+  }
+
+  a {
+    color: hsla(0deg 0 100%);
+    text-decoration: none;
+  }
 </style>
+
+<script is:inline>
+  const navBar = document.querySelector(".nav");
+  const burgerMenu = document.querySelector(".burger");
+  const dataStatus = "data-status";
+
+  //  Animation to the three spans, if get touch, will be a X
+  burgerMenu.addEventListener("click", () => {
+    const isOpen = navBar.getAttribute(dataStatus) === "open";
+    if (isOpen) {
+      burgerMenu.setAttribute(dataStatus, "close");
+      navBar.setAttribute(dataStatus, "close");
+    } else {
+      burgerMenu.setAttribute(dataStatus, "open");
+      navBar.setAttribute(dataStatus, "open");
+    }
+  });
+</script>

@@ -1,0 +1,58 @@
+---
+import type { boolean } from 'astro/zod';
+
+interface Props {
+  body: string;
+  href: string;
+  inverted?: boolean;
+}
+
+const { body, href, inverted } = Astro.props
+---
+
+<div class="cont-btn">
+  <button class={inverted ? 'contact-btn': 'announce-btn'}>
+    <a href={href}>{body}</a>
+  </button>
+</div>
+
+
+<style>
+  :root {
+    --bg-color-primary: hsl(86deg 100 37); 
+    --bg-color-secondary: hsla(44deg 98 50);
+
+  }
+
+  .cont-btn {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  @media(width >= 48rem) {
+    .cont-btn {
+      justify-content: flex-end;
+    }
+  }
+
+  .announce-btn {
+    padding: .6rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--bg-color-primary);
+  }
+
+  .contact-btn {
+    padding: .6rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--bg-color-secondary);
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--color)
+  }
+</style>
+

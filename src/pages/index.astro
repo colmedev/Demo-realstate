@@ -85,8 +85,8 @@ href='https://github.com/'
 	</div>
 
 	<Testimonials 
-body='Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis sunt illum recusandae laboriosam pariatur expedita facere rerum, esse quae est soluta accusamus laborum in error temporibus ea distinctio dicta laudantium?'
-name='Miguel'
+	body='Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis sunt illum recusandae laboriosam pariatur expedita facere rerum, esse quae est soluta accusamus laborum in error temporibus ea distinctio dicta laudantium?'
+	name='Miguel'
 />
 	
 </div>
@@ -118,13 +118,12 @@ name='Miguel'
   align-items: center;
   justify-content: center;
   inline-size: 100%;
-}
-
-@media(width >= 50rem) {
-	.info-cont {
+	@media(width >= 50rem) {
 		flex-direction: row;
 	}
 }
+
+
 /*----------- Announce Cont ------------*/
 .cont {
 	display: flex;
@@ -132,15 +131,15 @@ name='Miguel'
 	padding-block: .5rem;
 	align-items: center;
 	gap: 1rem;
-}
 
-@media(width >= 50rem){
-	.cont {
+	@media(width >= 50rem){
 		flex-direction: row;
 		justify-content: space-between;
 		padding-inline: .5rem;
 	}
 }
+
+
 
 	.announce-section {
 		text-align: center;
@@ -148,21 +147,39 @@ name='Miguel'
 
 	/*-----------	Parallax section	----------*/
 	.parallax {
-		background-image: url(/img/encuentra.jpg);
-		display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-		background-attachment: fixed;
-  	background-position: top;
-  	background-repeat: no-repeat;
-  	background-size: cover;
+		background-image: url(../img/encuentra.jpg);
+    height: 40svh;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+		flex-direction: column;
+    align-items: center;
+
+			@media (width >= 48rem) {
+			background-image: url(/img/encuentra.jpg);
+			display: flex;
+    	flex-direction: column;
+    	align-items: flex-start;
+			background-attachment: fixed;
+  		background-position: top;
+  		background-repeat: no-repeat;
+  		background-size: cover;
+		}
 	}
 
+
+
 	.parallax-title {
-		padding: 1.2rem;
 		color: var(--letter-color);
-		font-size: 3rem;
+
+		@media (width >= 48rem) {
+			padding: 1.2rem;
+			font-size: 3rem;
+		}
 	}
+
+
+
 
 	.parallax-body {
 		padding: .9rem;
@@ -178,5 +195,6 @@ name='Miguel'
 
 	.article-container {
 		display: flex;
+		flex-direction: column;
 	}
 </style>

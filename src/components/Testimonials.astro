@@ -14,19 +14,25 @@ const { body, name } = Astro.props
 
 <style is:inline>
 
-  .testimonial-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--bg-color-primary);
-    border-radius: 2rem;
-    margin: 2rem 10rem;
-    color: var(--letter-color);
-  }
+.testimonial-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color-primary);
+  border-radius: 2rem;
+  margin: 1rem 3rem;
+  color: var(--letter-color);
 
-  .content-testimonial {
-    inline-size: 40%;
-    text-align: center;
+  @media(width >= 48rem) {
+      margin: 2rem 10rem;
   }
+}
+
+ 
+
+.content-testimonial {
+  inline-size: 40%;
+  text-align: center;
+}
 </style>

@@ -4,14 +4,14 @@ import Navbar from "./Navbar.astro"
 
   <footer class="footer">
 
-    <Navbar>
-      <li class="list"><a href="github.com">Nosotros</a></li>
-      <li class="list"><a href="github.com">Anuncios</a></li>
-      <li class="list"><a href="github.com">Blog</a></li>
-      <li class="list"><a href="github.com">Contacto</a></li>
+    <Navbar bottom>
+      <li class="list-item-footer"><a href="github.com">Nosotros</a></li>
+      <li class="list-item-footer"><a href="github.com">Anuncios</a></li>
+      <li class="list-item-footer"><a href="github.com">Blog</a></li>
+      <li class="list-item-footer"><a href="github.com">Contacto</a></li>
     </Navbar>
 
-    <p>Made by Colmedev</p>
+    <p class="made">Made by Colmedev</p>
     
   </footer>
 
@@ -21,6 +21,16 @@ import Navbar from "./Navbar.astro"
   display: flex;
   justify-content: space-between;
   padding-inline: 1rem;
+}
+
+.made {
+  color: var(--letter-color);
+  padding-inline-end: 1.5rem;
+}
+
+.list-item-footer {
+  display: flex;
+  padding-inline: .2rem;
 }
 
 </style>

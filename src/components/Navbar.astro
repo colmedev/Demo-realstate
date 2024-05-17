@@ -1,3 +1,25 @@
-<ul class="list">
+---
+interface Props {
+  bottom?: boolean;
+}
+
+const { bottom } = Astro.props
+---
+
+<ul class={bottom ? 'bottom' : 'list'}>
   <slot />
 </ul>
+
+<style is:inline>
+  .list-item {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-block: .5rem;
+  }
+
+  .bottom {
+    display: flex;
+  }
+</style>

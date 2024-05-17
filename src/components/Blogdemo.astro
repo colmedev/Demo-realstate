@@ -55,9 +55,12 @@ const { title, image, date, body } = Astro.props
 }
 
 
-
 .image-blog {
   inline-size: 100vh;
   block-size: 21vh;
+
+  @media(width >= 48rem) {
+    block-size: 30vh;
+  }
 }
 </style>

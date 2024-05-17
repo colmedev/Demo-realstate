@@ -164,6 +164,7 @@ href='https://github.com/'
   		background-position: top;
   		background-repeat: no-repeat;
   		background-size: cover;
+			block-size: 60vh;
 		}
 	}
 
@@ -177,8 +178,6 @@ href='https://github.com/'
 			font-size: 3rem;
 		}
 	}
-
-
 
 
 	.parallax-body {
@@ -196,5 +195,10 @@ href='https://github.com/'
 	.article-container {
 		display: flex;
 		flex-direction: column;
+
+		@media(width >= 48rem) {
+			flex-direction: row;
+		}
 	}
+
 </style>

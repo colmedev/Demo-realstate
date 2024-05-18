@@ -1,18 +1,16 @@
----
-import Navbar from "./Navbar.astro"
----
 
   <footer class="footer">
 
-    <Navbar bottom>
+    <ul class="list-footer">
       <li class="list-item-footer"><a href="github.com">Nosotros</a></li>
       <li class="list-item-footer"><a href="github.com">Anuncios</a></li>
       <li class="list-item-footer"><a href="github.com">Blog</a></li>
       <li class="list-item-footer"><a href="github.com">Contacto</a></li>
-    </Navbar>
+    </ul>
 
-    <p class="made">Made by Colmedev</p>
-    
+    <div>
+      <p class="made">Made by Colmedev</p>
+    </div>
   </footer>
 
 <style is:inline>
@@ -28,8 +26,15 @@ import Navbar from "./Navbar.astro"
 }
 
 .list-item-footer {
-  display: flex;
-  padding-inline: .2rem;
+  list-style: none;
+  padding-block: .5em;
+}
+
+@media (width >= 48rem) {
+  .list-footer{
+    display: flex;
+    gap: 1em;
+  }
 }
 
 </style>

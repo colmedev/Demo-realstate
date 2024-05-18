@@ -6,7 +6,7 @@ interface Props {
 const { bottom } = Astro.props
 ---
 
-<ul class={bottom ? 'bottom' : 'list'}>
+<ul class="list">
   <slot />
 </ul>
 
@@ -28,8 +28,4 @@ const { bottom } = Astro.props
     padding-block: .5rem;
   }
 
-  .bottom {
-    display: flex;
-    flex-direction: column;
-  }
 </style>

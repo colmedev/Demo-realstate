@@ -3,12 +3,11 @@ import { Card, Section, Button, Blogdemo, Testimonials, Footer	} from '../compon
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Real Statement">
+<Layout title="Real Statement" />
 	<main>
-</Layout>
 <div class="info-cont">
 
-	<Section 
+<Section 
 	image= '/img/icono1.svg'
 	title='EL MEJOR PRECIO'
 	body= 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error, esse quos tempora vero architecto facilis veniam voluptas sint doloremque pariatur fugit voluptatum! Accusamus delectus facere fugiat hic quidem? Natus, quisquam.'
@@ -86,12 +85,11 @@ href='https://github.com/'
 
 	<Testimonials 
 	body='Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis sunt illum recusandae laboriosam pariatur expedita facere rerum, esse quae est soluta accusamus laborum in error temporibus ea distinctio dicta laudantium?'
-	name='Miguel'
 />
 	
 </div>
 
-	<Footer />	
+	<Footer />
 
 
 </main>
@@ -117,7 +115,6 @@ href='https://github.com/'
 	flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-inline-size: 100svh;
 	@media(width >= 50rem) {
 		flex-direction: row;
 	}
@@ -131,7 +128,6 @@ href='https://github.com/'
 	padding-block: .5rem;
 	align-items: center;
 	gap: 1rem;
-	min-inline-size: 100svh;
 
 	@media(width >= 50rem){
 		flex-direction: row;
@@ -142,7 +138,6 @@ href='https://github.com/'
 
 	.announce-section {
 		text-align: center;
-		min-inline-size: 100svh;
 	}
 
 	/*-----------	Parallax section	----------*/
@@ -154,7 +149,7 @@ href='https://github.com/'
     display: flex;
 		flex-direction: column;
     align-items: center;
-		min-inline-size: 107svh;
+
 
 			@media (width >= 48rem) {
 			background-image: url(/img/encuentra.jpg);
@@ -189,15 +184,19 @@ href='https://github.com/'
 
 	/*-----------	Blog and Testimonial section	----------*/
 	.article-container {
-		display: flex;
-
 		@media(width >= 48rem) {
+			display: flex;
 			flex-direction: row;
 		}
 	}
 	.blog-section {
 		display: flex;
 		flex-direction: column;
+		width: 100%;
+
+		@media (width >= 48rem) {
+			width: 66%;
+		}
 	}
 
 	

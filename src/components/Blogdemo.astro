@@ -11,12 +11,13 @@ const { title, image, date, body } = Astro.props
 ---
 
 <div class="blog-container">
-  <Image class="image-blog" 
-  src={ image }  
-  alt="announce" 
-  width="300" 
-  height="200"/>
-
+  <div class="image-container-blog">
+    <Image class="image-blog" 
+    src={ image }  
+    alt="announce" 
+    width="300" 
+    height="200"/>
+  </div>
   <div class="content-blog">
 
     <h2 class="title-blog">{ title }</h2>
@@ -35,32 +36,34 @@ const { title, image, date, body } = Astro.props
 
 .blog-container {
   display: flex;
+  inline-size: auto;
 }
 
-.image-blog {
-  padding: 1rem;
-}
 
 .underline-title {
   inline-size: 50%;
   background-color: var(--color-primary);
 }
 
-.blog-container {
-  inline-size: 50vh;
 
-  @media(width >= 48rem) {
-    inline-size: 100vh;
-  }
+.image-container-blog {
+  width: 40%;
+  height: 20%;
+  padding-block-start: 1em;
+  padding-inline-start: .3em;
 }
 
+.body-blog,
+.date {
+  inline-size: 90%;
+}
 
 .image-blog {
-  inline-size: 100vh;
-  block-size: 21vh;
+  inline-size: 90%;
+  height: 8em
+}
 
-  @media(width >= 48rem) {
-    block-size: 30vh;
-  }
+.content-blog {
+  inline-size: 66%;
 }
 </style>

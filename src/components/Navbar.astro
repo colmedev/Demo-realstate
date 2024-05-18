@@ -13,7 +13,12 @@ const { bottom } = Astro.props
 <style is:inline>
   .list {
     display: flex;
-    gap: 3rem;
+    gap: 1rem;
+    flex-direction: column;
+
+    @media (width >= 48rem) {
+      flex-direction: row;
+    }
   }
   .list-item {
     list-style: none;
@@ -25,5 +30,6 @@ const { bottom } = Astro.props
 
   .bottom {
     display: flex;
+    flex-direction: column;
   }
 </style>

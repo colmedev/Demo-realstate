@@ -1,39 +1,34 @@
 ---
 interface Props {
   body: string;
-  name: string;
 }
 
-const { body, name } = Astro.props
+const { body } = Astro.props
 ---
 
-<div class="testimonial-container">
-  <p class="content-testimonial">{ body }</p>
-  <p>-{ name }</p>
+<div class="testimonial-container">  
+  <p class="content-testimonial">{ body } -Miguel</p>
 </div>
 
 <style is:inline>
 
 .testimonial-container{
   display: flex;
-  flex-direction: column;
   align-items: center;
+  line-height: 24px;
+  width: auto;
   justify-content: center;
-  background-color: var(--bg-color-primary);
-  border-radius: 2rem;
-  margin: 7rem 3rem;
-  color: var(--letter-color);
+  padding-inline: 1em;
 
   @media(width >= 48rem) {
-      margin: 2rem 10rem;
   }
 }
 
- 
-
 .content-testimonial {
-  inline-size: 40%;
   text-align: center;
-  padding-inline: 8rem;
+  background-color: var(--bg-color-primary);
+  border-radius: 10%; 
+  padding-inline: 3em;
 }
+
 </style>

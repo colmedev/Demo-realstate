@@ -7,7 +7,7 @@ interface Props {
 const { image, title ,body } = Astro.props
 ---
 
-  <section class="art-cont">
+  <section class="article-cont">
     <article class="info">
         <img src={image} alt="icon" >
       <h3 class="title-section">{title}</h3>
@@ -18,8 +18,8 @@ const { image, title ,body } = Astro.props
 
 
 <style>
-.art-cont {
-  inline-size: 100svh;
+.article-cont {
+  width: auto;
 }
 
 .info {

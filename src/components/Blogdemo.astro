@@ -47,10 +47,10 @@ const { title, image, date, body } = Astro.props
 
 
 .image-container-blog {
-  width: 40%;
-  height: 20%;
+  width: 60%;
+  height: 4em;
   padding-block-start: 1em;
-  padding-inline-start: .3em;
+  padding: 1em;
 }
 
 .body-blog,
@@ -59,8 +59,12 @@ const { title, image, date, body } = Astro.props
 }
 
 .image-blog {
-  inline-size: 90%;
-  height: 8em
+  inline-size: 80%;
+  height: 6em;
+
+  @media (width >= 48rem) {
+    height: 10em;
+  }
 }
 
 .content-blog {

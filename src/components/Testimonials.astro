@@ -14,21 +14,21 @@ const { body } = Astro.props
 
 .testimonial-container{
   display: flex;
+  background-color: var(--bg-color-primary);
   align-items: center;
   line-height: 24px;
-  width: auto;
+  width: 60%;
   justify-content: center;
-  padding-inline: 1em;
-
-  @media(width >= 48rem) {
-  }
+  margin: 4em;
+  border-radius: 5%;
 }
 
 .content-testimonial {
   text-align: center;
-  background-color: var(--bg-color-primary);
+
   border-radius: 10%; 
-  padding-inline: 3em;
+  width: 58%;
+  padding: 1.5em;
 }
 
 </style>

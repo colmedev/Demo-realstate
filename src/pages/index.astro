@@ -143,7 +143,7 @@ href='https://github.com/'
 	/*-----------	Parallax section	----------*/
 	.parallax {
 		background-image: url(../img/encuentra.jpg);
-    height: 40svh;
+    height: 45svh;
     background-position: center center;
     background-size: cover;
     display: flex;
@@ -177,9 +177,13 @@ href='https://github.com/'
 
 
 	.parallax-body {
-		padding: .9rem;
+		padding-inline: .3rem;
 		color: var(--letter-color);
-		font-size: 1.3rem;
+		
+		@media (width >= 992px) {
+			font-size: 1.3rem;
+			padding: 0.9rem;
+		}
 	}
 
 	/*-----------	Blog and Testimonial section	----------*/

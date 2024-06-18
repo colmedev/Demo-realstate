@@ -8,12 +8,12 @@ import Layout from '../layouts/Layout.astro';
 <div class="info-cont">
 
 <Section 
-	image= '/img/icono1.svg'
+	image= '/img/icono2.svg'
 	title='EL MEJOR PRECIO'
 	body= 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error, esse quos tempora vero architecto facilis veniam voluptas sint doloremque pariatur fugit voluptatum! Accusamus delectus facere fugiat hic quidem? Natus, quisquam.'
  />
  <Section 
- 	image= "/img/icono2.svg"
+ 	image= "/img/icono1.svg"
 	title='SEGURIDAD'
 	body= 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error, esse quos tempora vero architecto facilis veniam voluptas sint doloremque pariatur fugit voluptatum! Accusamus delectus facere fugiat hic quidem? Natus, quisquam.'
  />
@@ -100,14 +100,25 @@ href='https://github.com/'
 }
 
 :root{
-	--letter-color: hsl(0deg 0 100); 
-	--bg-color-primary: hsl(86deg 100 37); 
-  --bg-color-secondary: hsla(44deg 98 50);
-	--bg-color: hsla(0deg 29 93);
-	--border-color: hsla(0deg 0 70);
-	--bg-color-footer: hsl(0deg 1 14);
+	--letter-color: #ffffff; 
+	--letter-color-b: #000;
+	--bg-color-primary: #b59c8d; 
+  --bg-color-secondary: #c9c3b7;
+	--bg-color: #565657;
+	--border-color: #ebe4de;
+	--bg-color-footer: #242323;
+
+	--color-options {
+	--color-option1:#b59c8d;
+	--color-option2:#c9c3b7;
+	--color-option3:#ebe4de;
+	--color-option4:#565657;
+	}
 }
 
+/*
+
+*/
 
 /*----------- Info Cont ------------*/
 .info-cont {

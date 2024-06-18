@@ -48,10 +48,11 @@ const { href, title, body, image } = Astro.props;
 <style>
 
 	:root{
-		--btn-color: hsla(44deg 98 50);
+		--btn-color: #ebe4de;
 	}
-	.title {
-		display: flex;
+	.title-card {
+		text-align: center;
+		color: var(--letter-color);
 	}
 
 	.card {
@@ -84,6 +85,7 @@ const { href, title, body, image } = Astro.props;
 	.body {
 		text-align: center;
 		padding-inline: 1rem;
+		color: var(--letter-color)
 	}
 
 	.btn-cont {
@@ -104,11 +106,12 @@ const { href, title, body, image } = Astro.props;
 	a {
 		text-decoration: none;
 		border-radius: 2px;
-		color: var(--letter-color);
+		color: var(--letter-color-b);
 	}
 
 	.num {
 		text-align: center;
+		color: var(--letter-color);
 	}
 
 	.wc {
